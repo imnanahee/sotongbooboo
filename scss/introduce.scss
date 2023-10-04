@@ -79,7 +79,7 @@
         .pick-wrap {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: start;
             gap: 2%;
         }
 
@@ -232,11 +232,11 @@
                 box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
 
                 &:nth-child(7) {
-                    flex-grow: 0.15;
+                    flex-grow: 0.05;
                 }
 
                 &:last-child {
-                    flex-grow: 0.15;
+                    flex-grow: 0.05;
                 }
             }
         }

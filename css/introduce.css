@@ -834,7 +834,7 @@ strong {
 .column-page .content-1 .pick-wrap {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   gap: 2%;
 }
 .column-page .content-1 .cell {
@@ -951,10 +951,10 @@ strong {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
   }
   .column-page .pick-wrap .cell:nth-child(7) {
-    flex-grow: 0.15;
+    flex-grow: 0.05;
   }
   .column-page .pick-wrap .cell:last-child {
-    flex-grow: 0.15;
+    flex-grow: 0.05;
   }
 }
 @media (max-width: 796px) {
