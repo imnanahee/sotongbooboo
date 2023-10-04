@@ -1,0 +1,939 @@
+@import 'sub';
+
+
+// 배너 이미지
+.chin {
+    @include bg('subanner/chin_banner.jpg');
+    height: 400px;
+    position: relative;
+}
+
+.chiropractic {
+    @include bg('subanner/chiropractic_banner.jpg');
+    height: 400px;
+    position: relative;
+}
+
+.sport {
+    @include bg('subanner/sports_banner.jpg');
+    height: 400px;
+    position: relative;
+}
+
+
+// 추나
+.chiropractic-page {
+    .content-1 { 
+        margin: 80px 0;
+
+        .cont-wrap-2 {
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .box {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 3%;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 3% 0 5%;
+        }
+    }
+
+    .content-2 {
+        .cont-wrap {
+            @include bg('sub/chiropractic_2_1.jpg');
+            padding: 80px 0 0;
+            text-align: center;
+
+            img {
+                margin-top: 5%;
+            }
+        }
+    }
+
+    .content-3 {
+        margin: 80px 0;
+
+        .text-wrap {
+            background-color: $main;
+            border-radius: 10px;
+            margin-top: 5%;
+            padding: 20px;
+            color: $white;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        dl {
+            padding: 2% 0;
+        }
+
+        dt {
+            font-size: 1.6em;
+            font-weight: 600
+        }
+        
+        dd {
+            font-size: 1.05em;
+            margin-top: 2%;
+            word-break: keep-all;
+        }
+
+        .box-wrap {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 5% 0 3%;
+            text-align: center;
+
+            img {
+                border: 1px solid $main;
+            }
+
+            p {
+                margin-top: 5%;
+                font-size: 1.1em;
+            }
+        }
+    }
+
+    .content-5 {
+        margin-bottom: 80px;
+    }
+}
+
+
+// 턱관절
+.chin-page {
+    .content-1 {
+        padding: 80px 0;
+    
+        .cont-wrap-2 {
+            margin-top: 3%;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            
+            dl {
+                flex: 1 1 30%;
+                border: 1px solid $main;
+                border-radius: 10px;
+                padding: 2%;
+                text-align: center;
+            }
+    
+            dt {
+                font-weight: 500;
+                margin-bottom: 3%;
+                font-size: 1.15em;
+            }
+
+            dd {
+                word-break: keep-all;
+            }
+        }
+    
+        .cont-wrap-3 {
+            margin-top: 3%;
+            background: $main;
+            text-align: center;
+            color: $white;
+            padding: 30px 15px;
+    
+            i {
+                font-size: 2em;
+            }
+            
+            strong {
+                display: block;
+                font-size: 1.3em;
+                line-height: 35px;
+                margin: 1% 0;
+            }
+    
+            p {
+                word-break: keep-all;
+            }
+        }
+    }
+
+    .content-2 {
+        padding: 80px 0;
+        background-color: $bg;
+
+        .cont-wrap-2 {
+            margin-top: 3.5%;
+        }
+    
+        .box {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 2%;
+            border: 1px solid $main;
+            border-radius: 10px;
+            background-color: $white;
+            box-sizing: border-box;
+            padding: 2%;
+            margin-bottom: 2%;
+        }
+
+        h4 {
+            background: $main;
+            color: $white;
+            height: 38px;
+            line-height: 38px;
+            width: 160px;
+            text-align: center;
+            font-size: 1.1em;
+            letter-spacing: -1px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+
+        ul {
+            width: 100%; 
+
+            li {
+                font-weight: 500;
+                font-size: 1.05em;
+                line-height: 30px;
+
+                &.circle {
+                    li::before {
+                        content: "";
+                        width: 3px;
+                        height: 3px;
+                        line-height: 3px;
+                        border-radius: 50px;
+                        background-color: #333;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: 5px;
+                    }
+                }
+
+                .word {
+                    background: #efefef;
+                    margin: 1.5% 0;
+                    font-weight: normal;
+                    font-size: 0.95em;
+                    padding: 1% 1.5%;
+                    line-height: 25px;
+                    word-break: keep-all;
+                    box-sizing: border-box;
+
+                    li {
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    
+        .middle {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+    
+            span {
+                display: block;
+                font-size: 0.95em;
+                margin-top: 5%;
+                min-height: 44px;
+                word-break: keep-all;
+            }
+    
+            dl {
+                text-align: center;
+            }
+    
+            dt {
+                font-weight: bold;
+                font-size: 1.15em;
+                margin-top: 3%;
+            }
+        }
+    }
+
+    .content-3 {
+        margin: 165px 0 80px;
+    }
+
+    .content-5 {
+        text-align: center;
+    
+        .box-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+            margin-top: 5%;
+    
+            .box {
+                position: relative;
+                border: 1px solid $main;
+                border-radius: 10px;
+                padding: 4% 3% 3%;
+                box-sizing: border-box;
+            }
+    
+            h4 {
+                position: absolute;
+                top: -35px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: $white;
+                background-color: $main;
+                width: 50px;
+                height: 50px;
+                padding: 2%;
+                border-radius: 50px;
+                font-weight: 600;
+            }
+
+            ul {
+                text-align: left;
+            }
+        }
+    
+        img {
+            margin: 5% 0;
+        }
+    }
+
+    .content-6 {
+        margin: 80px 0;
+        padding: 80px 0;
+        background-color: $bg;
+    
+        .bg-wrap {
+            @include bg('sub/chin_4.png');
+            height: 560px;
+        }
+    }
+
+    .content-7 {
+        margin: 80px 0;
+    }
+}
+
+// 스포츠손상클리닉
+.sports-page {
+    .content-1 {
+        background-color: $bg;
+        padding: 80px 0;
+
+        .box-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            margin-top: 30px;
+            gap: 25px;
+        }
+
+        li {
+            flex: 1 1 30%;
+            border: 1px solid $main;
+            border-radius: 10px;
+            background: $white;
+            padding: 3% 2%;
+            box-sizing: border-box;
+
+            i {
+                font-size: 1.5em;
+                color: $main;
+                margin-bottom: 2%;
+            }
+        }
+    }
+
+    .content-2 {
+        margin-top: 80px;
+
+        .bg-wrap {
+            @include bg('sub/sports_1.jpg');
+        }
+
+        .box-wrap {
+            padding-top: 3%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .box {
+            flex: 1 1 0;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background-color: $white;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+
+        .text-wrap {
+            padding: 5%;
+            box-sizing: border-box;
+
+            p {
+                word-break: keep-all;
+            }
+        }
+
+        h4 {
+            margin-bottom: 3%;
+            font-size: 1.15em;
+            font-weight: 600;
+
+            span {
+                color: $main;
+            }
+        }
+
+        .arrow-bg-wrap {
+            padding: 50px 0 80px;
+
+            h3 {
+                text-align: center;
+            }
+        }
+    }
+
+    .content-3 {
+        padding: 80px 0;
+        background-color: $bg;
+
+        ul {
+            margin-top: 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 25px;
+
+            li {
+                flex: 1;
+                font-size: 1.05em;
+                border: 1px solid #e0e0e0;
+                width: 100%;
+                padding: 5% 2%;
+                box-sizing: border-box;
+                position: relative;
+                text-align: center;
+                background-color: $white;
+            }
+
+            span {
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $main;
+                color: $white;
+                font-weight: 600;
+                font-size: 1.2em;
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+                text-align: center;
+                line-height: 50px;
+            }
+        }
+    }
+
+    .content-4 {
+        padding: 80px 0;
+
+        .box-wrap {
+            gap: 25px;
+        }
+
+        .box {
+            flex: 1 1 30%;
+        }
+    }
+
+    .box-wrap {
+        div[class*=step] {
+            background-color: inherit;
+            border: none;
+
+            img {
+                width: 100%;
+                height: 250px;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@include desktop {
+    .chiropractic-page {
+        .box-wrap {
+            flex-wrap: wrap;
+            gap: 25px;
+
+            li {
+                flex: 1 1 40%;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .sports-page {
+        .content-2 {
+            .box {
+                flex: 1 1 30%;
+
+                &:nth-child(4) {
+                    flex-grow: 0.15;
+                }
+
+                &:last-child {
+                    flex-grow: 0.15;
+                }
+            }
+            
+            .text-wrap {
+                p {
+                    br {
+                        @include br;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet-labtop {
+    .chiropractic-page {
+        .content-1 {
+            .cont-wrap-2 {
+                display: inherit;
+                margin: 0 auto;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .box {
+                margin: 5% auto;
+                width: 50%;
+            }
+        }
+
+        .content-2 {
+            .cont-wrap {
+                img {
+                    width: 80%;
+                    height: auto;
+                }
+            }
+        }
+
+        .content-3 {
+            .text-wrap {
+                gap: 20px;
+            }
+
+            dd {
+                br {
+                    @include br;
+                }
+            }
+        }
+    }
+
+    .chin-page {
+        .content-1 {
+            .desc {
+                br {
+                    @include br;
+                }
+            }
+
+            .cont-wrap-3 {
+                p {
+                    br {
+                        @include br;
+                    }
+                }
+            }
+        }
+
+        .content-2 {
+            .middle {
+                position: inherit;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: inherit;
+                margin-top: 8%;
+
+                dl {
+                    flex: 1 1 30%;
+                }
+            }
+        }
+
+        .content-3 {
+            margin: 60px 0 80px;
+        }
+
+        .content-5 {
+            .desc {
+                br {
+                    @include br;
+                }
+            }
+
+            .box-wrap {
+                margin-top: 10%;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .sports-page {
+        .content-1 {
+            li {
+                flex: 1 1 40%;
+            }
+        }
+
+        .content-2 {
+            .bg-wrap {
+                margin-top: 5%;
+            }
+        }
+
+        .content-3 {
+            ul {
+                li {
+                    flex: 1 1 40%;
+                    margin-bottom: 3%;
+                }
+            }
+        }
+
+        .box-wrap {
+            div[class*=step] {
+                img {
+                    height: 180px;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .chin-page {
+        .content-1 {
+            dd {
+                br {
+                    @include br;
+                }
+            }
+
+            .cont-wrap-3 {
+                p {
+                    padding: 0 5%;
+                }
+            }
+        }
+
+        .content-2 {
+            .desc {
+                br {
+                    @include br;
+                }
+            }
+
+            .box {
+                margin: 2% 0 2%;
+            }
+
+            h4 {
+                font-size: 1em;
+                
+            }
+
+            ul {
+                li {
+                    font-size: 1em;
+
+                    .word {
+                        padding: 2% 2.5%;
+                    }
+                }
+            }
+        }
+
+        .content-3 {
+            .desc {
+                br {
+                    @include br;
+                }
+            }
+        }
+
+        .content-5 {
+            .box-wrap {
+                .box {
+                    padding: 5% 3% 3%;
+                }
+            }
+
+            h4 {
+                font-size: 0.95em;
+            }
+
+            li {
+                font-size: 0.9em;
+            }
+        }
+
+        .content-6 {
+            .bg-wrap {
+                background-image: none;
+                height: auto;
+            }
+
+            ul {
+                margin-top: 8%;
+                width: auto;
+            }
+        }
+    }
+
+    .sports-page {
+        .content-2 {
+            .box-wrap {
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .box {
+                flex: 1 1 40%;
+
+                &:nth-child(4) {
+                    flex-grow: 1;
+                }
+            }
+            
+            img {
+                height: 300px;
+                object-fit: cover;
+            }
+        }
+        
+        .content-3 {
+            ul {
+                margin-top: 8%;
+            }
+        }
+
+        .content-4 {
+            .subtitle {
+                height: 48px;
+            }
+        }
+    }
+
+}
+
+
+@include tablet {
+    .chin-page {
+        .content-4 {
+            .desc {
+                br {
+                    @include br;
+                }
+            }
+        }
+
+        .content-5 {
+            .box-wrap {
+                display: inherit;
+
+                h4 {
+                    top: -20px;
+                    width: 100px;
+                    height: auto;
+
+                    br {
+                        @include br;
+                    }
+                }
+
+                .box {
+                    margin-bottom: 5%;
+                    padding: 8% 3% 5%;
+                }
+
+                ul {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .chiropractic-page {
+        .content-1 {
+            .box {
+                width: 80%;
+                box-sizing: border-box;
+            }
+        }
+
+        .content-3 {
+            .text-wrap {
+                display: inherit;
+            }
+
+            .box-wrap {
+                p {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+
+    .chin-page {
+        .content-1 {
+            .cont-wrap-2 {
+                display: inherit;
+                margin: 30px 0;
+
+                dl {
+                    margin-bottom: 15px;
+                }
+            }
+
+            .cont-wrap-3 {
+                padding: 5% 3%;
+            }
+        }
+
+        .content-2 {
+            .box {
+                padding: 5% 4%;
+                gap: 10px;
+            }
+
+            ul {
+                li {
+                    .word {
+                        padding: 5%;
+                    }
+                }
+            }
+        }
+
+        .content-5 {
+            .box-wrap {
+                margin-top: 15%;
+                
+                .box {
+                    margin-bottom: 10%;
+                }
+            }
+
+            img {
+                display: none;
+            }
+        }
+
+        .content-6 {
+            .tit {
+                text-align: center;
+            }
+
+            ul {
+                margin: 8% 3% 0;
+            }
+        }
+    }
+
+    .sports-page {
+        .content-1 {
+            li {
+               flex: 1 1 40%; 
+            }
+            .box-wrap {
+                gap: 15px;
+            }
+        }
+
+        .content-2 {
+            .box-wrap {
+                gap: 25px;
+            }
+
+            .box {
+                flex: auto;
+
+                &:last-child {
+                    flex-grow: 1;
+                }
+            }
+
+            img {
+                height: 180px;
+            }
+        }
+
+        .content-3 {
+            ul {
+                margin-top: 50px;
+
+                li {
+                    flex: auto;
+                    margin-bottom: 3%;
+                    padding: 8% 2% 5%;
+                }
+            }
+        }
+
+        .content-4 {
+            .box {
+                flex: 1 1 40%;
+            }
+        }
+
+        .box-wrap {
+            div[class*=step] {
+                img {
+                    height: 130px;
+                }
+            }
+        }
+    }
+}

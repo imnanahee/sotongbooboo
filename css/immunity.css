@@ -1,0 +1,1689 @@
+@charset "UTF-8";
+/* 반응형 화면 크기 */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+* {
+  font-family: "Montserrat", Malgun Gothic, sans-serif;
+  font-size: 100%;
+}
+
+/* 아이폰 사파리에서 화면회전시 폰트 확대방지*/
+* {
+  -webkit-text-size-adjust: none;
+}
+
+/*Reset*/
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* body {-webkit-overflow-scrolling:touch; overflow:auto;} */
+/* body {overflow:auto; -webkit-overflow-scrolling:touch;} */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, legend {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: #333;
+}
+
+a[href*="tel:"] {
+  color: inherit;
+}
+
+a:focus {
+  outline: none;
+}
+
+fieldset, img, input {
+  border: 0;
+  vertical-align: middle;
+}
+
+address {
+  font-style: normal;
+}
+
+caption {
+  height: 0;
+  width: 0;
+  line-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  position: absolute;
+}
+
+legend {
+  display: none;
+}
+
+body, h1, h2, h3, h4, th, td, input {
+  color: #333;
+  font-weight: normal;
+  letter-spacing: -0.5px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.menu-open {
+  overflow-y: hidden;
+}
+
+#header {
+  box-sizing: border-box;
+  background: #363636;
+  height: 130px;
+}
+#header .inner {
+  width: 1300px;
+  min-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+#header .logo a {
+  display: block;
+}
+#header nav .main-menu {
+  display: block;
+  color: #fff;
+  font-size: 1.1em;
+  width: 130px;
+  text-align: center;
+}
+#header nav .close-btn {
+  display: none;
+}
+#header .depth-1 {
+  display: flex;
+}
+#header .depth-1 > li {
+  position: relative;
+  height: 130px;
+  line-height: 130px;
+}
+#header .depth-1 > li:nth-child(5) .main-menu {
+  color: #525252;
+}
+#header .depth-1 > li:last-child .main-menu {
+  color: #525252;
+}
+#header .depth-2 {
+  display: none;
+  position: absolute;
+  background: rgba(54, 54, 54, 0.7);
+  top: 130px;
+  left: 0;
+  padding: 0 3%;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+#header .depth-2.off {
+  display: none;
+}
+#header .depth-2.on {
+  display: block;
+}
+#header .depth-2 a {
+  display: block;
+  color: #fff;
+  font-weight: 300;
+  height: 45px;
+  line-height: 45px;
+}
+#header .depth-3 {
+  display: none;
+}
+#header .gnb-btn {
+  display: none;
+}
+
+#aside {
+  width: 90px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #d7d7d7;
+  z-index: 50;
+}
+#aside li {
+  position: relative;
+}
+#aside li:not(:last-child) {
+  border-bottom: 1px solid #165650;
+}
+#aside li a {
+  display: block;
+}
+#aside .scroll-top {
+  display: block;
+  padding: 30px 0;
+  text-align: center;
+  color: #666;
+  cursor: pointer;
+}
+#aside .brunch-btn {
+  display: flex;
+  position: absolute;
+  top: 25px;
+  right: 100px;
+  gap: 10px;
+  width: 0;
+  opacity: 0;
+}
+#aside .brunch-btn.on {
+  opacity: 1;
+  width: auto;
+  transition: opacity 0.2s linear;
+}
+#aside .brunch-btn a {
+  display: inline-block;
+  color: #19625b;
+  background-color: #fff;
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  letter-spacing: -1px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9em;
+  word-break: keep-all;
+  transition: 0.3s;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+#aside .brunch-btn a:hover {
+  transition: 0.3s;
+  background: #5adfc4;
+  color: #fff;
+}
+
+@media (max-width: 1300px) {
+  #header .inner {
+    width: 1000px;
+    min-width: 1000px;
+  }
+  #aside {
+    display: none;
+  }
+}
+@media (max-width: 988px) {
+  #header {
+    overflow: hidden;
+    padding: 0;
+    height: 80px;
+    line-height: 80px;
+  }
+  #header .inner {
+    width: auto;
+    min-width: auto;
+    padding: 0 5%;
+    display: inherit;
+  }
+  #header .logo {
+    display: inline-block;
+    margin: 0;
+  }
+  #header nav.menu-wrap {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 80vw;
+    height: 100%;
+    max-height: 100vh;
+    background-color: #fff;
+    z-index: 5;
+    -webkit-transition: right 0.2s ease-out;
+    transition: right 0.2s ease-out;
+  }
+  #header nav.menu-wrap .depth-1 {
+    display: none;
+  }
+  #header nav.menu-wrap.show {
+    right: 0;
+    transition: right 0.5 ease-out;
+  }
+  #header nav.menu-wrap.show .close-btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 1%;
+    padding: 5%;
+    cursor: pointer;
+  }
+  #header nav.menu-wrap.show .depth-1 {
+    display: flex;
+    margin: 20% 5% 0;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  #header nav.menu-wrap.show .depth-1 > li {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+  #header nav.menu-wrap.show .depth-1 > li:nth-child(5) .main-menu {
+    color: #d9d9d9;
+    font-weight: normal;
+  }
+  #header nav.menu-wrap.show .depth-1 > li:last-child .main-menu {
+    color: #d9d9d9;
+    font-weight: normal;
+  }
+  #header nav.menu-wrap.show .depth-1 .main-menu {
+    font-weight: bold;
+  }
+  #header nav.menu-wrap.show .depth-1 a {
+    color: #333;
+    height: 30px;
+    line-height: 30px;
+  }
+  #header nav.menu-wrap.show .main-menu {
+    width: auto;
+  }
+  #header nav.menu-wrap.show .depth-2 {
+    display: block;
+    background: none;
+    position: inherit;
+    top: inherit;
+    left: inherit;
+    width: auto;
+    margin-top: 5%;
+    padding: 0;
+  }
+  #header .gnb-btn {
+    display: block;
+    float: right;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    line-height: 80px;
+    cursor: pointer;
+  }
+}
+@media (max-width: 600px) {
+  #header {
+    height: 70px;
+    line-height: 70px;
+  }
+  #header .gnb-btn {
+    line-height: 70px;
+  }
+  #header .depth-2 a {
+    font-size: 0.92em;
+  }
+}
+/* 
+#header .gnb .depth_1 li .depth_3 > li.changed > a:after {bottom:-5px;}
+#header .gnb .depth_1 li .depth_3 > li:first-child > a {padding-top:0;}
+
+#header .gnb .depth_1 > li .depth_2 li a:after {content:''; display:inline-block; width:100%; height:1px; background:#555; position:absolute; left:0; top:25px; opacity:0;}
+#header .gnb .depth_1 > li .depth_2 li a:hover:after {content:''; display:inline-block; width:100%; height:1px; background:#555; position:absolute; left:0; top:25px; opacity:1;}
+.line {display:none; opacity:0; position:absolute; bottom:8px; left:0; width:100%; height:1px; background:#363636;}
+
+#header .gnb .depth_1 li ul li.line > a:before {content:''; display:inline-block; width:100%; height:1px; position:absolute; bottom:-5px; background:#363636;}
+ */
+#footer {
+  background-color: #222;
+  height: 150px;
+  padding: 25px 0;
+}
+#footer .inner {
+  width: 1300px;
+  min-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+#footer .footer_r {
+  color: #fff;
+}
+#footer .footer_r ul {
+  display: flex;
+  margin-bottom: 20px;
+}
+#footer .footer_r li:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 1px;
+  background: #fff;
+  margin: 0 10px;
+}
+#footer .footer_r a {
+  color: #fff;
+}
+#footer .footer_r address {
+  line-height: 23px;
+}
+#footer .footer_r p {
+  display: inline-block;
+}
+#footer .footer_r p:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 1px;
+  background: #fff;
+  margin: 0 10px;
+}
+#footer .footer_r .copyright {
+  margin-top: 20px;
+}
+
+.nav-bg {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: rgb(0, 0, 0);
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+@media (max-width: 1300px) {
+  #footer .inner {
+    width: 1000px;
+    min-width: 1000px;
+  }
+}
+@media (max-width: 988px) {
+  #footer {
+    height: auto;
+    padding: 5% 0;
+  }
+  #footer .inner {
+    width: auto;
+    min-width: auto;
+    padding: 0 5%;
+    display: inherit;
+  }
+  #footer .logo {
+    text-align: center;
+    margin-bottom: 3%;
+  }
+  #footer .footer_r ul {
+    margin: 2% 0;
+  }
+  #footer address p {
+    word-break: keep-all;
+  }
+}
+@media (max-width: 600px) {
+  #footer {
+    font-size: 0.95em;
+  }
+  #footer address {
+    line-height: inherit;
+  }
+  #footer address p {
+    display: block;
+  }
+  #footer address p::after {
+    height: 0 !important;
+  }
+}
+#main .inner {
+  width: 1300px;
+  min-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+
+.sub-banner .text-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+.sub-banner .text-wrap span {
+  text-transform: uppercase;
+  color: rgba(225, 255, 255, 0.7);
+  font-weight: bold;
+  font-size: 2.2em;
+}
+.sub-banner .text-wrap h2 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 2.5em;
+  word-break: keep-all;
+}
+.sub-banner .text-wrap p {
+  word-break: keep-all;
+  margin-top: 2%;
+  line-height: 26px;
+}
+
+.tit {
+  font-size: 1.8em;
+  font-weight: 600;
+  letter-spacing: -1px;
+  text-align: center;
+  word-break: keep-all;
+}
+.tit span {
+  color: #5adfc4;
+}
+
+.desc {
+  margin-top: 1.5%;
+  word-break: keep-all;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 30px;
+}
+.desc span {
+  color: #5adfc4;
+}
+
+.cure-process {
+  background-color: #dcf5f1;
+}
+.cure-process .cont-wrap {
+  margin: 80px 0;
+  padding: 80px 0;
+}
+.cure-process .box-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 5%;
+}
+.cure-process h4 {
+  background-color: #5adfc4;
+  color: #fff;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 20px;
+  margin-bottom: 7%;
+  font-size: 1.15em;
+  font-weight: bold;
+}
+.cure-process .subtitle {
+  font-size: 1.05em;
+  margin-bottom: 5%;
+  font-weight: 500;
+  word-break: keep-all;
+}
+.cure-process div[class*=step] {
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  border-radius: 10px;
+}
+.cure-process div[class*=step] p {
+  line-height: 26px;
+  padding: 20px 0;
+  height: 155px;
+}
+.cure-process div[class*=step] img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.arrow-bg-wrap {
+  text-align: center;
+}
+.arrow-bg-wrap::before {
+  content: url("../images/sub/arrow_s.png");
+  display: block;
+  padding-bottom: 2%;
+}
+
+.qna-wrap {
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.qna-wrap .box {
+  flex: 1 1 40%;
+}
+
+.question {
+  padding: 3% 5% 3% 10%;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  word-break: keep-all;
+  font-size: 1.12em;
+  text-indent: -15px;
+  cursor: pointer;
+}
+.question.on {
+  background-color: #5adfc4;
+  border-color: #5adfc4;
+  color: #fff;
+  font-weight: 600;
+}
+.question::before {
+  content: "Q.";
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.answer {
+  line-height: 28px;
+  font-size: 1.05em;
+  text-indent: -15px;
+  padding-left: 5%;
+  height: 0;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+.answer::before {
+  content: "A.";
+}
+.answer.on {
+  transition: opacity 0.2s linear;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 5%;
+  height: auto;
+  opacity: 1;
+  padding-right: 8px;
+}
+
+.bg-wrap .tit {
+  text-align: left;
+}
+.bg-wrap ul {
+  margin-top: 3%;
+}
+.bg-wrap ul li {
+  display: flex;
+  font-size: 1.05em;
+  line-height: 28px;
+  padding-bottom: 30px;
+}
+.bg-wrap ul span {
+  color: #5adfc4;
+  margin-right: 5px;
+  font-weight: 600;
+}
+.bg-wrap ul p {
+  word-break: keep-all;
+}
+
+@media (max-width: 1300px) {
+  #main .inner {
+    width: 1000px;
+    min-width: 1000px;
+  }
+  .cure-process .cont-wrap .box-wrap {
+    gap: 30px;
+    justify-content: center;
+  }
+  .cure-process .cont-wrap .box-wrap .box {
+    width: 33.333%;
+  }
+  .cure-process .cont-wrap .box-wrap img {
+    width: 100%;
+    height: auto;
+  }
+  .question {
+    font-size: 1.05em;
+  }
+  .question::before {
+    margin-left: 10px;
+    padding-right: 3px;
+  }
+  .answer {
+    font-size: 1em;
+  }
+}
+@media (max-width: 988px) {
+  #main .inner {
+    width: auto;
+    min-width: auto;
+    padding: 0 5%;
+    display: inherit;
+  }
+  .qna-wrap {
+    margin-top: 8%;
+  }
+  .bg-wrap ul {
+    width: 45%;
+  }
+  .bg-wrap br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+}
+@media (max-width: 796px) {
+  .tit {
+    font-size: 1.5em;
+  }
+  .desc {
+    font-size: 1em;
+    margin-top: 3%;
+    line-height: 25px;
+  }
+  .cure-process div[class*=step] p {
+    padding: 5%;
+    font-size: 0.95em;
+  }
+  .cure-process div[class*=step] p br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+  .cure-process .cont-wrap .box-wrap .box {
+    flex: 1 1 40%;
+  }
+  .qna-wrap {
+    display: inherit;
+  }
+}
+@media (max-width: 600px) {
+  .sub-banner .text-wrap {
+    width: 100%;
+    padding: 5%;
+    box-sizing: border-box;
+  }
+  .sub-banner .text-wrap p {
+    font-size: 0.9em;
+  }
+  .cure-process div[class*=step] p {
+    height: auto;
+  }
+  .cure-process .box-wrap {
+    margin-top: 8%;
+  }
+  .cure-process .box-wrap .box {
+    flex: 1 1 50%;
+  }
+  .cure-process .cont-wrap .box-wrap .box {
+    flex: auto;
+    width: auto;
+  }
+}
+.atopy {
+  background-image: url("../images/subanner/atopy_banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 400px;
+  position: relative;
+}
+
+.asthma {
+  background-image: url("../images/subanner/asthma_banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 400px;
+  position: relative;
+}
+
+.rhinitis {
+  background-image: url("../images/subanner/rhinitis_banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 400px;
+  position: relative;
+}
+
+.content-2.hover {
+  background-color: #f7f7f7;
+  padding: 80px 0;
+}
+.content-2.hover .hover-cont {
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.content-2.hover .hover-cont p {
+  margin-top: 3%;
+  text-align: center;
+  font-size: 1.05em;
+}
+.content-2.hover li.on img {
+  border: 1px solid #5adfc4;
+}
+.content-2.hover img {
+  border: 1px solid #eee;
+}
+.content-2.hover .hover-result {
+  margin-top: 3%;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px dashed #5adfc4;
+}
+.content-2.hover .result {
+  font-size: 1.05em;
+  overflow: hidden;
+  word-break: keep-all;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+}
+.content-2.hover .result.on {
+  max-height: 135px;
+}
+
+.rhinitis-page .content-1 {
+  margin: 80px 0;
+}
+.rhinitis-page .content-3 {
+  margin: 80px 0;
+}
+.rhinitis-page .content-3 h4 {
+  width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 50px;
+  color: #fff;
+}
+.rhinitis-page .content-3 .cont-wrap {
+  margin-top: 3%;
+}
+.rhinitis-page .content-3 .cont-wrap h4 {
+  background-color: #5adfc4;
+}
+.rhinitis-page .content-3 .cont-wrap span {
+  background-color: #5adfc4;
+}
+.rhinitis-page .content-3 .cont-wrap::after {
+  content: url("../images/sub/arrow_s.png");
+  display: block;
+  padding: 5% 0;
+  text-align: center;
+}
+.rhinitis-page .content-3 .cont-wrap-2 h4 {
+  background-color: #125c56;
+}
+.rhinitis-page .content-3 .cont-wrap-2 span {
+  background-color: #125c56;
+}
+.rhinitis-page .content-3 .box-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 5%;
+  flex-wrap: wrap;
+}
+.rhinitis-page .content-3 .box {
+  border: 1px solid #e0e0e0;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+.rhinitis-page .content-3 .box span {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+}
+.rhinitis-page .content-3 .box p {
+  word-break: keep-all;
+  font-size: 1.03em;
+}
+.rhinitis-page .content-4 {
+  padding: 80px 0;
+  background-color: #f7f7f7;
+}
+.rhinitis-page .content-4 .bg-wrap {
+  background-image: url("../images/sub/rhinitis_4.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 550px;
+  overflow: hidden;
+}
+.rhinitis-page .content-4 .text-wrap {
+  float: left;
+  margin-top: 3%;
+}
+.rhinitis-page .content-4 .tit {
+  position: relative;
+  margin-bottom: 35px;
+}
+.rhinitis-page .content-4 .tit::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+.rhinitis-page .content-4 .desc {
+  text-align: left;
+}
+.rhinitis-page .content-4 .result {
+  background-color: #fff;
+  border: 2px dashed #5adfc4;
+  margin-top: 5%;
+  padding: 15px;
+  border-radius: 50px;
+  word-break: keep-all;
+  font-size: 1.2em;
+}
+.rhinitis-page .content-5 {
+  padding: 80px 0;
+  background-image: url("../images/sub/rhinitis_2.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.rhinitis-page .content-5 .result {
+  background-color: #fff;
+  border: 2px dashed #125c56;
+  margin-top: 3%;
+  padding: 15px;
+  border-radius: 50px;
+  text-align: center;
+  color: #125c56;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+.rhinitis-page .content-6 .cont-wrap {
+  margin-top: 0;
+}
+.rhinitis-page .content-6 img {
+  border-radius: 10px;
+}
+.rhinitis-page .content-7 {
+  margin-bottom: 80px;
+}
+.rhinitis-page .content-7 .tit {
+  text-align: center;
+}
+
+.asthma-page .content-1 {
+  margin: 80px 0;
+}
+.asthma-page .content-1 .cont-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 3%;
+  text-align: center;
+}
+.asthma-page .content-1 dl {
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  padding: 30px 0;
+}
+.asthma-page .content-1 dl:nth-child(odd) {
+  border: 3px solid #5ad0b8;
+}
+.asthma-page .content-1 dl:nth-child(odd) dt {
+  color: #5ad0b8;
+}
+.asthma-page .content-1 dl:nth-child(odd) dt::after {
+  background-color: #5ad0b8;
+}
+.asthma-page .content-1 dl:nth-child(even) {
+  border: 3px solid #05978b;
+}
+.asthma-page .content-1 dl:nth-child(even) dt {
+  color: #05978b;
+}
+.asthma-page .content-1 dl:nth-child(even) dt::after {
+  background-color: #05978b;
+}
+.asthma-page .content-1 dt {
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 5%;
+}
+.asthma-page .content-1 dt::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.asthma-page .content-2 {
+  padding: 80px 0;
+  background-color: #dcf5f1;
+}
+.asthma-page .content-2 ol {
+  max-width: 1040px;
+  margin: 5% auto 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+.asthma-page .content-2 li {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  background-size: contain !important;
+}
+.asthma-page .content-2 li:first-child {
+  background-image: url("../images/sub/atopic_3_1.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.asthma-page .content-2 li:first-child span {
+  background-color: #5acab3;
+}
+.asthma-page .content-2 li:nth-child(2) {
+  background-image: url("../images/sub/atopic_3_2.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.asthma-page .content-2 li:nth-child(2) span {
+  background-color: #41bfaf;
+}
+.asthma-page .content-2 li:nth-child(3) {
+  background-image: url("../images/sub/atopic_3_3.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.asthma-page .content-2 li:nth-child(3) span {
+  background-color: #1fae9f;
+}
+.asthma-page .content-2 li:last-child {
+  background-image: url("../images/sub/atopic_3_4.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.asthma-page .content-2 li:last-child span {
+  background-color: #1fae9f;
+}
+.asthma-page .content-2 li span {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.15em;
+  font-weight: bold;
+  border-radius: 50%;
+  color: #fff;
+}
+.asthma-page .content-2 li img {
+  background-color: #fff;
+  border-radius: 50%;
+  margin-top: 15%;
+  border: 2px solid #5adfc4;
+}
+.asthma-page .content-2 li strong {
+  display: block;
+  padding: 10px 0;
+  font-size: 1.1em;
+}
+.asthma-page .content-2 li p {
+  margin-bottom: 15%;
+}
+.asthma-page .content-3 {
+  padding: 80px 0;
+  background-color: #f7f7f7;
+}
+.asthma-page .content-3 .bg-wrap {
+  background-image: url("../images/sub/asthma_2.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 670px;
+}
+.asthma-page .content-3 .text-wrap {
+  float: left;
+}
+.asthma-page .content-3 .text-wrap .desc {
+  text-align: left;
+}
+.asthma-page .content-4 {
+  margin: 80px 0;
+}
+.asthma-page .content-4 .box-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 5%;
+  flex-wrap: wrap;
+}
+.asthma-page .content-4 .box {
+  border: 1px solid #e0e0e0;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+.asthma-page .content-4 .box span {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #5adfc4;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+}
+.asthma-page .content-4 .box p {
+  word-break: keep-all;
+}
+.asthma-page .content-4 img {
+  margin: 10% 0 8%;
+}
+.asthma-page .content-5 {
+  background-color: #f7f7f7;
+  padding: 80px 0;
+}
+.asthma-page .content-5 .bg-wrap {
+  background-image: url("../images/sub/asthma_3.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 380px;
+}
+.asthma-page .content-5 .text-wrap {
+  float: right;
+  width: 50%;
+}
+.asthma-page .content-5 .desc {
+  text-align: left;
+}
+.asthma-page .content-6 {
+  padding: 80px 0;
+  background-color: #dcf5f1;
+}
+.asthma-page .content-6 .result-wrap {
+  margin-top: 3%;
+  text-align: center;
+  background-color: #5adfc4;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 30px 20px;
+  font-size: 1.1em;
+  word-break: keep-all;
+}
+.asthma-page .content-7 {
+  margin: 80px 0;
+}
+.asthma-page .content-7 .qna-wrap .box:last-child {
+  flex-grow: 0.15;
+}
+
+.atopy-page .content-1 {
+  margin: 80px 0;
+}
+.atopy-page .content-1 .cont-wrap {
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.atopy-page .content-1 dl {
+  flex: 1 1 30%;
+  border: 1px solid #5adfc4;
+  border-radius: 10px;
+  padding: 2%;
+  text-align: center;
+}
+.atopy-page .content-1 dt {
+  font-weight: 500;
+  margin-bottom: 3%;
+  font-size: 1.15em;
+}
+.atopy-page .content-1 dd {
+  word-break: keep-all;
+}
+.atopy-page .content-1 .cont-wrap-2 {
+  margin-top: 3%;
+  background: #5adfc4;
+  text-align: center;
+  color: #fff;
+  padding: 30px 15px;
+}
+.atopy-page .content-1 .cont-wrap-2 i {
+  font-size: 2em;
+}
+.atopy-page .content-1 .cont-wrap-2 strong {
+  display: block;
+  font-size: 1.3em;
+  line-height: 35px;
+  margin: 1% 0;
+}
+.atopy-page .content-1 .cont-wrap-2 p {
+  word-break: keep-all;
+  margin-top: 1%;
+}
+.atopy-page .content-3 {
+  margin: 80px 0;
+}
+.atopy-page .content-3 .box-wrap {
+  display: flex;
+  max-width: 1000px;
+  margin: 5% auto 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  text-align: center;
+}
+.atopy-page .content-3 .box {
+  flex: 1 1 40%;
+  position: relative;
+  border: 1px solid #5adfc4;
+  border-radius: 10px;
+  padding: 4% 3% 3%;
+  box-sizing: border-box;
+}
+.atopy-page .content-3 .box span {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #5adfc4;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  width: 150px;
+  height: 45px;
+  line-height: 45px;
+}
+.atopy-page .content-3 img {
+  display: block;
+  margin: 0 auto;
+}
+.atopy-page .content-3 h4 {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.15em;
+  margin: 1.5% 0 2%;
+}
+.atopy-page .content-3 h4::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+}
+.atopy-page .content-3 p {
+  word-break: keep-all;
+}
+.atopy-page .content-5 ol {
+  max-width: 1040px;
+  margin: 5% auto 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 25px;
+}
+.atopy-page .content-5 li {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  background-size: contain !important;
+}
+.atopy-page .content-5 li:first-child {
+  background-image: url("../images/sub/atopic_3_1.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.atopy-page .content-5 li:first-child span {
+  background-color: #5acab3;
+}
+.atopy-page .content-5 li:nth-child(2) {
+  background-image: url("../images/sub/atopic_3_2.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.atopy-page .content-5 li:nth-child(2) span {
+  background-color: #41bfaf;
+}
+.atopy-page .content-5 li:nth-child(3) {
+  background-image: url("../images/sub/atopic_3_3.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.atopy-page .content-5 li:nth-child(3) span {
+  background-color: #1fae9f;
+}
+.atopy-page .content-5 li:nth-child(4) {
+  background-image: url("../images/sub/atopic_3_4.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.atopy-page .content-5 li:nth-child(4) span {
+  background-color: #1fae9f;
+}
+.atopy-page .content-5 li:last-child {
+  background-image: url("../images/sub/atopic_3_5.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.atopy-page .content-5 li:last-child span {
+  background-color: #05978b;
+}
+.atopy-page .content-5 li span {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.15em;
+  font-weight: bold;
+  border-radius: 50%;
+  color: #fff;
+}
+.atopy-page .content-5 li p {
+  display: block;
+  line-height: 330px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.atopy-page .content-6 .box-wrap {
+  justify-content: center;
+  gap: 25px;
+}
+.atopy-page .content-7 {
+  margin-bottom: 80px;
+}
+.atopy-page .content-7 .box-wrap {
+  margin-top: 5%;
+}
+.atopy-page .content-7 .box {
+  border: 1px solid #e0e0e0;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 3%;
+  display: flex;
+  gap: 25px;
+}
+.atopy-page .content-7 .box div {
+  width: 85%;
+}
+.atopy-page .content-7 .box span {
+  display: inline-block;
+  background-color: #5adfc4;
+  color: #fff;
+  width: 80px;
+  border-radius: 50px;
+  text-align: center;
+  padding: 5px 0;
+}
+.atopy-page .content-7 .box p {
+  display: inline-block;
+  font-size: 1.05em;
+  margin-left: 1%;
+}
+.atopy-page .content-7 ul {
+  margin-top: 3%;
+}
+.atopy-page .content-7 li {
+  margin-bottom: 3%;
+}
+.atopy-page .content-7 h4 {
+  color: #5adfc4;
+  font-size: 1.3em;
+  letter-spacing: -1px;
+  font-weight: 600;
+}
+.atopy-page .content-7 strong {
+  font-size: 1.3em;
+}
+.atopy-page .content-8 {
+  padding: 80px 0;
+  background-color: #f7f7f7;
+}
+.atopy-page .content-8 .desc {
+  text-align: left;
+}
+.atopy-page .content-8 .bg-wrap {
+  background-image: url("../images/sub/atopic_5.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 450px;
+}
+.atopy-page .content-9 {
+  margin: 80px 0;
+}
+.atopy-page .content-9 .qna-wrap .box:last-child {
+  flex-grow: 0.15;
+}
+
+@media (max-width: 1300px) {
+  .content-2.hover .hover-cont {
+    justify-content: center;
+    text-align: center;
+  }
+  .content-2.hover .hover-cont li {
+    margin-bottom: 3%;
+  }
+  .rhinitis-page .content-2 .hover-cont li {
+    flex: 1 1 30%;
+  }
+  .asthma-page .content-4 .box {
+    flex: 1 1 30%;
+    margin-bottom: 5%;
+  }
+  .asthma-page .content-4 .box:nth-child(4) {
+    flex-grow: 0.15;
+  }
+  .asthma-page .content-4 .box:last-child {
+    flex-grow: 0.15;
+  }
+  .asthma-page .content-5 .bg-wrap {
+    height: 550px;
+  }
+  .atopy-page .content-1 dd br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+  .atopy-page .content-2 .hover-cont li {
+    flex: 1 1 40%;
+  }
+}
+@media (max-width: 988px) {
+  .rhinitis-page .content-3 {
+    padding: 20px;
+  }
+  .rhinitis-page .content-3 .box p br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+  .rhinitis-page .content-5 .desc br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+  .asthma-page .content-2 ol {
+    margin: 8% auto 0;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .asthma-page .content-2 li {
+    flex: 1 1 40%;
+    margin-bottom: 20px;
+  }
+  .asthma-page .content-2 li p {
+    margin-bottom: 40px;
+    font-size: 0.95em;
+  }
+  .asthma-page .content-2 li img {
+    margin-top: 40px;
+    width: 100px;
+    height: auto;
+  }
+  .asthma-page .content-3 .text-wrap {
+    width: 65%;
+  }
+  .asthma-page .content-5 .box {
+    margin-bottom: 8%;
+  }
+  .asthma-page .content-6 br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+  .atopy-page .content-5 br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+  .atopy-page .content-5 ol {
+    max-width: inherit;
+    flex-wrap: wrap;
+  }
+  .atopy-page .content-5 li {
+    flex: 1 1 30%;
+    margin-bottom: 5%;
+  }
+  .atopy-page .content-5 li p {
+    line-height: 300px;
+    padding-top: 25px;
+  }
+  .atopy-page .content-5 li span {
+    bottom: -30px;
+  }
+  .atopy-page .content-7 .box div {
+    width: 80%;
+  }
+}
+@media (max-width: 796px) {
+  .rhinitis-page .content-2 .hover-cont {
+    margin-top: 8%;
+  }
+  .rhinitis-page .content-3 .box-wrap {
+    margin-top: 8%;
+    gap: 35px;
+  }
+  .rhinitis-page .content-3 .box {
+    flex: 1 1 40%;
+  }
+  .rhinitis-page .content-4 {
+    text-align: center;
+  }
+  .rhinitis-page .content-4 .bg-wrap {
+    background-image: none;
+    height: auto;
+  }
+  .rhinitis-page .content-4 .tit {
+    text-align: center;
+  }
+  .rhinitis-page .content-4 .desc {
+    text-align: center;
+  }
+  .rhinitis-page .content-5 .result {
+    font-size: 1.05em;
+  }
+  .rhinitis-page .content-6 .cont-wrap .box:last-child {
+    flex-grow: 0.15;
+  }
+  .asthma-page .content-1 .cont-wrap {
+    margin-top: 8%;
+  }
+  .asthma-page .content-3 .bg-wrap {
+    overflow: hidden;
+    background-image: inherit;
+    height: auto;
+  }
+  .asthma-page .content-3 .text-wrap {
+    width: auto;
+  }
+  .asthma-page .content-4 .bg-wrap {
+    background-image: inherit;
+    height: auto;
+  }
+  .asthma-page .content-4 .box-wrap {
+    margin-top: 12%;
+  }
+  .asthma-page .content-4 .text-wrap {
+    float: inherit;
+    width: 100%;
+  }
+  .asthma-page .content-4 .tit {
+    text-align: center;
+  }
+  .asthma-page .content-5 .bg-wrap {
+    height: auto;
+    background-image: none;
+  }
+  .asthma-page .content-5 .bg-wrap .text-wrap {
+    float: inherit;
+    width: auto;
+  }
+  .asthma-page .content-5 .box-wrap {
+    margin-top: 8%;
+  }
+  .atopy-page .content-1 .cont-wrap-2 br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+  .atopy-page .content-3 .box-wrap {
+    margin-top: 8%;
+  }
+  .atopy-page .content-3 .box span {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .atopy-page .content-3 img {
+    margin-top: 5%;
+  }
+  .atopy-page .content-3 h4 {
+    margin: 3% 0;
+  }
+  .atopy-page .content-5 li p {
+    padding-top: 0;
+    line-height: 250px;
+  }
+  .atopy-page .content-8 .bg-wrap {
+    background-image: inherit;
+    height: auto;
+  }
+  .atopy-page .content-8 .bg-wrap br {
+    content: inherit;
+  }
+}
+@media (max-width: 600px) {
+  .content-2.hover .hover-cont {
+    margin-top: 8%;
+  }
+  .content-2.hover .hover-result {
+    margin-top: 5%;
+  }
+  .content-2.hover .result {
+    font-size: 1em;
+    text-align: center;
+  }
+  .rhinitis-page .content-3 .cont-wrap {
+    margin-top: 8%;
+  }
+  .rhinitis-page .content-3 h4 {
+    width: 100%;
+    font-size: 1.05em;
+  }
+  .rhinitis-page .content-3 .box-wrap {
+    display: inherit;
+    margin-top: 12%;
+  }
+  .rhinitis-page .content-3 .box:not(:last-child) {
+    margin-bottom: 10%;
+  }
+  .rhinitis-page .content-4 .result {
+    font-size: 1.05em;
+  }
+  .rhinitis-page .content-5 .result {
+    margin-top: 5%;
+  }
+  .atopy-page .content-1 .cont-wrap {
+    margin-top: 8%;
+    display: inherit;
+  }
+  .atopy-page .content-1 dl {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+  .atopy-page .content-3 .box-wrap {
+    margin-top: 15%;
+  }
+  .atopy-page .content-3 .box {
+    padding: 20px;
+  }
+  .atopy-page .content-5 li {
+    margin-bottom: 8%;
+    flex: 1 1 40%;
+  }
+  .atopy-page .content-5 li span {
+    bottom: -25px;
+  }
+  .atopy-page .content-7 ul {
+    margin-top: 5%;
+  }
+  .atopy-page .content-7 li {
+    margin-bottom: 5%;
+  }
+  .atopy-page .content-7 .box {
+    gap: 10px;
+    padding: 20px;
+  }
+  .atopy-page .content-7 .box span {
+    width: 60px;
+    padding: 2px 0;
+  }
+  .atopy-page .content-7 .box p {
+    display: block;
+    font-size: 1em;
+  }
+  .atopy-page .content-7 h4 {
+    font-size: 1.15em;
+  }
+  .atopy-page .content-8 .bg-wrap br {
+    content: "";
+  }
+}
+
+/*# sourceMappingURL=immunity.css.map */

@@ -1,0 +1,356 @@
+@import 'common';
+
+#main {
+    .inner {
+        @include inner;
+    }
+}
+
+// 서브페이지 공용 css
+.sub-banner {
+    .text-wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        color: $white;
+
+        span {
+            text-transform: uppercase;
+            color: rgba(225, 255, 255, 0.7);
+            font-weight: bold;
+            font-size: 2.2em;
+        }
+
+        h2 {
+            color: $white;
+            font-weight: bold;
+            font-size: 2.5em;
+            word-break: keep-all;
+        }
+
+        p {
+            word-break: keep-all;
+            margin-top: 2%;
+            line-height: 26px;
+        }
+    }
+}
+
+.tit {
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: -1px;
+    text-align: center;
+    word-break: keep-all;
+
+    span {
+        color: $main;
+    }
+}
+
+.desc {
+    margin-top: 1.5%;
+    word-break: keep-all;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 30px;
+
+    span {
+        color: $main;
+    }
+}
+
+.cure-process {
+    background-color: #dcf5f1;
+
+    .cont-wrap {
+        margin: 80px 0;
+        padding: 80px 0;
+    }
+
+    .box-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: center;
+        margin-top: 5%;
+    }
+
+    h4 {
+        background-color: $main;
+        color: $white;
+        height: 38px;
+        line-height: 38px;
+        border-radius: 20px;
+        margin-bottom: 7%;
+        font-size: 1.15em;
+        font-weight: bold;
+    }
+
+    .subtitle {
+        font-size: 1.05em;
+        margin-bottom: 5%;
+        font-weight: 500;
+        word-break: keep-all;
+    }
+
+    div[class*=step] {
+        border: 1px solid $br;
+        background: $white;
+        border-radius: 10px;
+
+        p {
+            line-height: 26px;
+            padding: 20px 0;
+            height: 155px;
+        }
+
+        img {
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+    }
+}
+
+.arrow-bg-wrap {
+    text-align: center;
+
+    &::before {
+        content: url('../images/sub/arrow_s.png');
+        display: block;
+        padding-bottom: 2%;
+    }
+}
+
+.qna-wrap {
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .box {
+        flex: 1 1 40%;
+    }
+}
+
+.question {
+    padding: 3% 5% 3% 10%;
+    box-sizing: border-box;
+    border: 1px solid $br;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    word-break: keep-all;
+    font-size: 1.12em;
+    text-indent: -15px;
+    cursor: pointer;
+
+    &.on {
+        background-color: $main;
+        border-color: $main;
+        color: $white;
+        font-weight: 600;
+    }
+
+    &::before {
+        content: 'Q.';
+        display: inline-block;
+        padding-right: 10px;
+    }
+}
+
+.answer {
+    line-height: 28px;
+    font-size: 1.05em;
+    text-indent: -15px;
+    padding-left: 5%;
+    height: 0;
+    opacity: 0;
+    transition: opacity $delay linear;
+
+    &::before {
+        content: 'A.';
+    }
+
+    &.on {
+        transition: opacity $delay linear;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 5%;
+        height: auto;
+        opacity: 1;
+        padding-right: 8px;
+    }
+}
+
+
+.bg-wrap {
+    .tit {
+        text-align: left;
+    }
+
+    ul {
+        margin-top: 3%;
+
+        li {
+            display: flex;
+            font-size: 1.05em;
+            line-height: 28px;
+            padding-bottom: 30px;
+        }
+
+        span {
+            color: $main;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+
+        p {
+            word-break: keep-all;
+        }
+    }
+}
+
+// 미디어쿼리
+@include desktop {
+    #main {
+        .inner {
+            width: 1000px;
+            min-width: 1000px;
+        }
+    }
+
+    .cure-process {
+        .cont-wrap {
+            .box-wrap {
+                gap: 30px;
+                justify-content: center;
+
+                .box {
+                    width: 33.333%;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .question {
+        font-size: 1.05em;
+
+        &::before {
+            margin-left: 10px;
+            padding-right: 3px;
+        }
+    }
+
+    .answer {
+        font-size: 1em;
+    }
+}
+
+@include tablet-labtop {
+    #main {
+        .inner {
+            width: auto;
+            min-width: auto;
+            padding: 0 5%;
+            display: inherit;
+        }
+    }
+
+    .qna-wrap {
+        margin-top: 8%;
+    }
+
+    .bg-wrap {
+        ul {
+            width: 45%;
+        }
+
+        br {
+            @include br;
+        }
+    }
+}
+
+@include tablet {
+    .tit {
+        font-size: 1.5em;
+    }
+
+    .desc {
+        font-size: 1em;
+        margin-top: 3%;
+        line-height: 25px;
+    }
+
+    .cure-process {
+        div[class*=step] {
+            p {
+                padding: 5%;
+                font-size: 0.95em;
+
+                br {
+                    @include br;
+                }
+            }
+        }
+
+        .cont-wrap {
+            .box-wrap {
+                .box {
+                    flex: 1 1 40%;
+                }
+            }
+        }
+    }
+
+    .qna-wrap {
+        display: inherit;
+    }
+}
+
+@include mobile {
+    .sub-banner {
+        .text-wrap {
+            width: 100%;
+            padding: 5%;
+            box-sizing: border-box;
+
+            p {
+                font-size: 0.9em;
+            }
+        }
+    }
+
+    .cure-process {
+        div[class*=step] {
+            p {
+                height: auto;
+            }
+        }
+
+        .box-wrap {
+            margin-top: 8%;
+
+            .box {
+                flex: 1 1 50%;
+            }
+        }
+
+        .cont-wrap {
+            .box-wrap {
+                .box {
+                    flex: auto;
+                    width: auto;
+                }
+            }
+        }
+    }
+}

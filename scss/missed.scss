@@ -1,0 +1,604 @@
+@import 'sub';
+
+
+// 배너 이미지
+.missed {
+    @include bg('subanner/missed_banner.jpg');
+    height: 400px;
+    position: relative;
+}
+
+.infertility {
+    @include bg('subanner/induced_banner.jpg');
+    height: 400px;
+    position: relative;
+}
+
+
+// 난임 
+.infertility-page {
+    .content-1 {
+        padding: 80px 0;
+        background-color: $bg;
+
+        .bg-wrap {
+            @include bg('sub/infertility_1.png');
+            height: 560px;
+        }
+
+        .text-wrap {
+            width: 45%;
+            float: right;
+        }
+
+        .desc {
+            text-align: left;
+        }
+    }
+
+    .content-2 {
+        margin: 80px 0;
+
+        .cont-wrap {
+            text-align: center;
+            max-width: 805px;
+            margin:0 auto;
+        }
+
+        img {
+            margin: 3% 0;
+            border: 1px solid $main;
+            border-radius: $radius;
+            padding: 0 30px 30px;
+            box-sizing: border-box;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 30px;
+        }
+
+        li {
+            width: 18%;
+
+            i {
+                color: $main;
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1.3em;
+                margin-top: 10px;
+                color: #666;
+            }
+        }
+
+        .result {
+            margin-top: 5%;
+            background: $main;
+            color: $white;
+            border-radius: $radius;
+            padding: 30px 0;
+            font-size: 1.2em;
+        }
+    }
+
+    .content-3 {
+        padding: 80px 0;
+        background-color: $bg;
+        .bg-wrap {
+            @include bg('sub/infertility_3.png');
+            height: 560px;
+        }
+    }
+
+    .content-4 {
+        margin: 80px 0;
+
+        .box-wrap {
+            margin-top: 5%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            .box {
+                border: 1px solid $main;
+                border-radius: $radius;
+                text-align: center;
+                padding: 50px;
+
+                p {
+                    font-size: 1.1em;
+                    margin-top: 10px;
+                }
+            }
+
+            strong {
+                color: $main;
+                font-size: 1.8em;
+            }
+        }
+    }
+
+    .content-5 {
+        padding-bottom: 80px;
+
+        .cont-wrap {
+            padding-bottom: 0;
+        }
+
+        .result {
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+
+            dl {
+                text-align: center;
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                background-color: $white;
+                position: relative;
+                padding: 80px 0;
+                box-sizing: border-box;
+                border: 30px solid $main;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -10px;
+                    left: -10px;
+                    width: 230px;
+                    height: 230px;
+                    border: 15px solid #a8f2e3;
+                    background: transparent;
+                    border-radius: 50%;
+                }
+
+                &:not(:last-child)::after {
+                    content: "+";
+                    background-color: #79908b;
+                    position: absolute;
+                    right: -50%;
+                    top: 50%;
+                    transform: translate(50%, -50%);
+                    color: $white;
+                    width: 70px;
+                    line-height: 70px;
+                    height: 70px;
+                    font-size: 2.5em;
+                    font-weight: bolder;
+                    border-radius: 50%;
+                }
+            }
+
+            dt {
+                font-size: 1.5em;
+                color: $main;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .content-6 {
+        margin: 50px 0 80px;
+    }
+}
+
+// 유산
+.missed-page {
+    .content-1 {
+        margin: 80px 0;
+    }
+
+    .content-2 {
+        padding: 80px 0;
+        @include bg('sub/missed_bg.jpg');
+
+        .desc {
+            span {
+                display: block;
+                line-height: 30px;
+                font-weight: 600;
+            }
+        }
+
+        .cont-wrap {
+            margin-top: 3%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        dl {
+            text-align: center;
+            box-sizing: border-box;
+            padding: 40px 0;
+
+            &:first-child {
+                @include bg('sub/bg_means_list01.png');
+                width: 170px;
+                height: 170px;
+
+                dt {
+                    color: #d94a4a;
+                }
+            }
+
+            &:last-child {
+                @include bg('sub/bg_means_list02.png');
+                width: 170px;
+                height: 170px;
+
+                dt {
+                    color: #475783;
+                }
+            }
+
+            dt {
+                font-size: 2em;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+        }
+
+        .cont-wrap-2 {
+            margin-top: 3%;
+            background: $main;
+            text-align: center;
+            color: $white;
+            padding: 30px 15px;
+
+            i {
+                font-size: 2em;
+            }
+
+            p {
+                display: block;
+                font-size: 1.3em;
+                line-height: 35px;
+                margin-top: 1%;
+                word-break: keep-all;
+            }
+        }
+    }
+
+    .content-3 {
+        padding: 80px 0;
+
+        .box-wrap {
+            display: flex;
+            max-width: 620px;
+            margin: 5% auto 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+
+            li {
+                border: 10px solid $main;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                padding: 38px 0;
+                box-sizing: border-box;
+            }
+
+            i {
+                display: block;
+                text-align: center;
+                font-size: 30px;
+                margin-bottom: 2%;
+            }
+
+            span {
+                display: block;
+                text-align: center;
+                color: $main;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .content-4 {
+        margin: 50px 0 80px;
+    }
+
+    .content-5 {
+        padding: 80px 0;
+        background-color: $bg;
+
+        .bg-wrap {
+            @include bg('sub/disease1.png');
+            height: 460px;
+        }
+    }
+
+    .content-6 {
+        margin: 80px 0;
+
+        .etc {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 1%;
+        }
+    }
+
+    .content-7 {
+        padding: 80px 0;
+    }
+}
+
+
+// 미디어쿼리
+@include desktop {
+    .missed-page {
+        .content-7 {
+            .box-wrap {
+                gap: 20px;
+            }
+    
+            .box {
+                flex: 1 1 40%;
+            }
+    
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .infertility-page {
+        .content-1 {
+            .text-wrap {
+                width: auto;
+            }
+        }
+
+        .content-3 {
+            .bg-wrap {
+                background-position: 100% 100%;
+                background-size: contain;
+                height: 500px;
+            }
+
+            ul {
+                width: 100%;
+            }
+        }
+
+        .content-5 {
+            .result {
+                dl {
+                    width: 250px;
+                    height: 250px;
+                    padding: 50px 0;
+
+                    &::before {
+                        width: 180px;
+                        height: 180px;
+                    }
+
+                    &:not(:last-child)::after {
+                        width: 50px;
+                        height: 50px;
+                        line-height: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet-labtop {
+    .missed-page {
+        .content-2 {
+            .desc {
+                br {
+                    @include br;
+                }
+            }
+
+            .cont-wrap-2 {
+                p {
+                    font-size: 1.1em;
+                    line-height: inherit;
+                }
+
+                br {
+                    @include br;
+                }
+            }
+        }
+    }
+    
+    .infertility-page {
+        .content-1 {
+            .bg-wrap {
+                br {
+                    content: inherit;
+                }
+            }
+        }
+
+        .content-5 {
+            .result {
+                justify-content: center;
+                gap: 20px;
+
+                dl {
+                    width: 200px;
+                    height: 200px;
+                    padding: 30px 0;
+                    border-width: 20px;
+
+
+                    &::before {
+                        width: 160px;
+                        height: 160px;
+                        border-width: $radius;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                dt {
+                    font-size: 1.3em;
+                }
+
+                br {
+                    @include br;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .missed-page {
+        .content-1 {
+            br {
+                @include br;
+            }
+        }
+
+        .content-3 {
+            .box-wrap {
+                margin: 5% auto 0;
+            }
+        }
+
+        .content-5 {
+            .bg-wrap {
+                background: none;
+                height: auto;
+            }
+
+            ul {
+                margin-top: 8%;
+                width: auto;
+            }
+        }
+
+        .content-6 {
+            br {
+                @include br;
+            }
+        }
+
+        .conetnt-7 {
+            .desc {
+                br {
+                    @include br;
+                }
+            }
+        }
+    }
+
+    .infertility-page {
+        .content-1 {
+            .bg-wrap {
+                background-image: none;
+                height: auto;
+            }
+
+            .text-wrap {
+                width: auto;
+                float: inherit;
+
+                .tit {
+                    text-align: center;
+                }
+
+                .desc {
+                    text-align: center;
+                }
+            }
+        }
+
+        .content-2 {
+            .desc {
+                br {
+                    @include br;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .content-3 {
+            .bg-wrap {
+                background-image: none;
+                height: auto;
+            }
+
+            ul {
+                margin-top: 8%;
+                width: auto;
+            }
+        }
+
+        .content-4 {
+            .box-wrap {
+                .box {
+                    padding: 50px 10px;
+                }
+            }
+        }
+
+        .content-5 {
+            .result {
+                display: inherit;
+
+                dl {
+                    margin:0 auto;
+                    margin-bottom: 20px;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                dt {
+                    font-size: 1.15em;
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .missed-page {
+        .content-2 {
+            dl {
+                padding: 30px 0;
+
+                &:first-child {
+                    width: 150px;
+                    height: 150px;
+                }
+
+                &:last-child {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+
+            .cont-wrap-2 {
+                margin-top: 8%;
+            }
+        }
+
+        .content-3 {
+            br {
+                @include br;
+            }
+        }
+    }
+}

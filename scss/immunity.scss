@@ -1,0 +1,1247 @@
+@import 'sub';
+
+// 배너 이미지
+.atopy {
+    @include bg('subanner/atopy_banner.jpg');
+    height: 400px;
+    position: relative;
+}
+
+.asthma {
+    @include bg('subanner/asthma_banner.jpg');
+    height: 400px;
+    position: relative;
+}
+
+.rhinitis {
+    @include bg('subanner/rhinitis_banner.jpg');
+    height: 400px;
+    position: relative;
+}
+
+
+.content-2.hover {
+    background-color: $bg;
+    padding: 80px 0;
+
+    .hover-cont {
+        margin-top: 3%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        p {
+            margin-top: 3%;
+            text-align: center;
+            font-size: 1.05em;
+        }
+    }
+
+    li {
+        &.on {
+            img {
+                border: 1px solid $main;
+            }
+        }
+    }
+
+    img {
+        border: 1px solid #eee;
+    }
+
+    .hover-result {
+        margin-top: 3%;
+        padding: 30px;
+        background-color: $white;
+        border: 1px dashed $main;
+    }
+
+    .result {
+        font-size: 1.05em;
+        overflow: hidden;
+        word-break: keep-all;
+        max-height: 0;
+        transition: max-height 0.5s ease-in-out;
+
+        &.on {
+            max-height: 135px;
+        }
+    }
+}
+
+
+// 비염
+.rhinitis-page {
+    .content-1 {
+        margin: 80px 0;
+    }
+
+    .content-3 {
+        margin: 80px 0;
+
+        h4 {
+            width: 450px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 1.2em;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 50px;
+            color: $white;
+        }
+
+        .cont-wrap {
+            margin-top: 3%;
+
+            h4 {
+                background-color: $main;
+                
+            }
+
+            span {
+                background-color: $main;
+            }
+
+            &::after {
+                content: url('../images/sub/arrow_s.png');
+                display: block;
+                padding: 5% 0;
+                text-align: center;
+            }
+        }
+
+        .cont-wrap-2 {
+            h4 {
+                background-color: #125c56;
+            }
+
+            span {
+                background-color: #125c56;
+            }
+        }
+
+        .box-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 5%;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            border: 1px solid $br;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+            flex: 1;
+            position: relative;
+
+            span {
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: $white;
+                font-size: 1.3em;
+                font-weight: bold;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                border-radius: 50%;
+            }
+
+            p {
+                word-break: keep-all;
+                font-size: 1.03em;
+            }
+        }
+    }
+
+    .content-4 {
+        padding: 80px 0;
+        background-color: $bg;
+
+        .bg-wrap {
+            @include bg('sub/rhinitis_4.png');
+            height: 550px;
+            overflow: hidden;
+        }
+
+        .text-wrap {
+            float: left;
+            margin-top: 3%;
+
+        }
+
+        .tit {
+            position: relative;
+            margin-bottom: 35px;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 3px;
+                background-color: #333;
+                position: absolute;
+                bottom: -15px;
+                left: 0;
+            }
+        }
+
+        .desc {
+            text-align: left;
+        }
+
+        .result {
+            background-color: $white;
+            border: 2px dashed $main;
+            margin-top: 5%;
+            padding: 15px;
+            border-radius: 50px;
+            word-break: keep-all;
+            font-size: 1.2em;
+        }
+    }
+
+    .content-5 {
+        padding: 80px 0;
+        @include bg('sub/rhinitis_2.jpg');
+
+        .result {
+            background-color: $white;
+            border: 2px dashed #125c56;
+            margin-top: 3%;
+            padding: 15px;
+            border-radius: 50px;
+            text-align: center;
+            color: #125c56;
+            font-weight: 600;
+            font-size: 1.2em;
+        
+        }
+    }
+
+    .content-6 {
+        .cont-wrap {
+            margin-top: 0;
+        }
+
+        img {
+            border-radius: $radius;
+        }
+    }
+
+    .content-7 {
+        margin-bottom: 80px;
+
+        .tit {
+            text-align: center;
+        }
+    }
+}
+
+
+// 천식
+.asthma-page {
+    .content-1 {
+        margin: 80px 0;
+
+        .cont-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 3%;
+            text-align: center;
+        }
+
+        dl {
+            width: 150px;
+            height: 150px;
+            box-sizing: border-box;
+            border-radius: 50%;
+            padding: 30px 0;
+
+            &:nth-child(odd) {
+                border: 3px solid #5ad0b8;
+
+                dt {
+                    color: #5ad0b8;
+
+                    &::after {
+                        background-color: #5ad0b8;
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                border: 3px solid #05978b;
+
+                dt {
+                    color: #05978b;
+
+                    &::after {
+                        background-color: #05978b;
+                    }
+                }
+            }
+        }
+
+        dt {
+            font-size: 1.1em;
+            font-weight: 600;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 5%;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -3px;
+                width: 100%;
+                height: 3px;
+                left: 50%;
+                transform: translateX(-50%);
+
+            }
+        }
+    }
+
+    .content-2 {
+        padding: 80px 0;
+        background-color: #dcf5f1;
+
+        ol {
+            max-width: 1040px;
+            margin: 5% auto 0;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 15px;
+        }
+
+        li {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            background-size: contain !important;
+
+            &:first-child {
+                @include bg('sub/atopic_3_1.png');
+
+                span {
+                    background-color: #5acab3;
+                }
+            }
+
+            &:nth-child(2) {
+                @include bg('sub/atopic_3_2.png');
+                
+                span {
+                    background-color:#41bfaf;
+                }
+            }
+
+            &:nth-child(3) {
+                @include bg('sub/atopic_3_3.png');
+
+                span {
+                    background-color: #1fae9f;
+                }
+            }
+
+            &:last-child {
+                @include bg('sub/atopic_3_4.png');
+
+                span {
+                    background-color: #1fae9f;
+                }
+            }
+
+            span {
+                position: absolute;
+                bottom: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 1.15em;
+                font-weight: bold;
+                border-radius: 50%;
+                color: #fff;
+            }
+
+            img {
+                background-color: $white;
+                border-radius: 50%;
+                margin-top: 15%;
+                border: 2px solid $main;
+            }
+
+            strong {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.1em;
+            }
+
+            p {
+                margin-bottom: 15%;
+            }
+        }
+    }
+
+    .content-3 {
+        padding: 80px 0;
+        background-color: $bg;
+
+        .bg-wrap {
+            @include bg('sub/asthma_2.png');
+            height: 670px;
+        }
+
+        .text-wrap {
+            float: left;
+
+            .desc {
+                text-align: left;
+            }
+        }
+    }
+
+    .content-4 {
+        margin: 80px 0;
+
+        .box-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 5%;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            border: 1px solid $br;
+            padding: 30px; 
+            box-sizing: border-box;
+            text-align: center;
+            flex: 1;
+            position: relative;
+
+            span {
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $main;
+                color: $white;
+                font-size: 1.3em;
+                font-weight: bold;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                border-radius: 50%;
+            }
+
+            p {
+                word-break: keep-all;
+            }
+        }
+
+        img {
+            margin: 10% 0 8%;
+        }
+    }
+
+    .content-5 {
+        background-color: $bg;
+        padding: 80px 0;
+
+        .bg-wrap {
+            @include bg('sub/asthma_3.png');
+            height: 380px;
+        }
+
+        .text-wrap {
+            float: right;
+            width: 50%;
+        }
+
+        .desc {
+            text-align: left;
+        }
+    }
+
+    .content-6 {
+        padding: 80px 0;
+        background-color: #dcf5f1;
+
+        .result-wrap {
+            margin-top: 3%;
+            text-align: center;
+            background-color: $main;
+            color: $white;
+            border: 1px solid $white;
+            padding: 30px 20px;
+            font-size: 1.1em;
+            word-break: keep-all;
+        }
+    }
+
+    .content-7 {
+        margin: 80px 0;
+
+        .qna-wrap {
+            .box {
+                &:last-child {
+                    flex-grow: 0.15;
+                }
+            }
+        }
+    }
+}
+
+
+// 아토피
+.atopy-page {
+    .content-1 {
+        margin: 80px 0;
+        
+        .cont-wrap {
+            margin-top: 3%;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+        }
+
+        dl {
+            flex: 1 1 30%;
+            border: 1px solid $main;
+            border-radius: $radius;
+            padding: 2%;
+            text-align: center;
+        }
+
+        dt {
+            font-weight: 500;
+            margin-bottom: 3%;
+            font-size: 1.15em;
+        }
+
+        dd {
+            word-break: keep-all;
+        }
+
+        .cont-wrap-2 {
+            margin-top: 3%;
+            background: $main;
+            text-align: center;
+            color: $white;
+            padding: 30px 15px;
+
+            i {
+                font-size: 2em;
+            }
+
+            strong {
+                display: block;
+                font-size: 1.3em;
+                line-height: 35px;
+                margin: 1% 0;
+            }
+
+            p {
+                word-break: keep-all;
+                margin-top: 1%;
+            }
+        }
+    }
+
+    .content-3 {
+        margin: 80px 0;
+
+        .box-wrap {
+            display: flex;
+            max-width: 1000px;
+            margin: 5% auto 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+            text-align: center;
+        }
+
+        .box {
+            flex: 1 1 40%;
+            position: relative;
+            border: 1px solid #5adfc4;
+            border-radius: $radius;
+            padding: 4% 3% 3%;
+            box-sizing: border-box;
+
+            span {
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $main;
+                color: $white;
+                font-size: 1.3em;
+                font-weight: bold;
+                width: 150px;
+                height: 45px;
+                line-height: 45px;
+            }
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        h4 {
+            position: relative;
+            display: inline-block;;
+            font-weight: 600;
+            font-size: 1.15em;
+            margin: 1.5% 0 2%;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #333;
+            }
+        }
+
+        p {
+            word-break: keep-all;
+        }
+    }
+
+    .content-5 {
+        ol {
+            max-width: 1040px;
+            margin: 5% auto 0;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 25px;
+        }
+
+        li {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            background-size: contain !important;
+
+            &:first-child {
+                @include bg('sub/atopic_3_1.png');
+
+                span {
+                    background-color: #5acab3;
+                }
+            }
+
+            &:nth-child(2) {
+                @include bg('sub/atopic_3_2.png');
+                
+                span {
+                    background-color:#41bfaf;
+                }
+            }
+
+            &:nth-child(3) {
+                @include bg('sub/atopic_3_3.png');
+
+                span {
+                    background-color: #1fae9f;
+                }
+            }
+
+            &:nth-child(4) {
+                @include bg('sub/atopic_3_4.png');
+
+                span {
+                    background-color: #1fae9f;
+                }
+            }
+
+            &:last-child {
+                @include bg('sub/atopic_3_5.png');
+
+                span {
+                    background-color: #05978b;
+                }
+            }
+
+            span {
+                position: absolute;
+                bottom: 15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 1.15em;
+                font-weight: bold;
+                border-radius: 50%;
+                color: $white;
+            }
+
+            p {
+                display: block;
+                line-height: 330px;
+                font-size: 1.2em;
+                font-weight: 600;
+            }
+        }
+
+    }
+
+    .content-6 {
+        .box-wrap{
+            justify-content: center;
+            gap: 25px;
+        }
+    }
+
+    .content-7 {
+        margin-bottom: 80px;
+        
+        .box-wrap {
+            margin-top: 5%;
+        }
+
+        .box {
+            border: 1px solid $br;
+            padding: 30px;
+            box-sizing: border-box;
+            margin-bottom: 3%;
+            display: flex;
+            gap: 25px;
+
+            div {
+                width: calc(100% - 15%);
+            }
+
+            span {
+                display: inline-block;
+                background-color: $main;
+                color: $white;
+                width: 80px;
+                border-radius: 50px;
+                text-align: center;
+                padding: 5px 0;
+            }
+
+            p {
+                display: inline-block;
+                font-size: 1.05em;
+                margin-left: 1%;
+            }
+        }
+
+        ul {
+            margin-top: 3%;
+        }
+
+        li {
+            margin-bottom: 3%;
+        }
+
+        h4 {
+            color: $main;
+            font-size: 1.3em;
+            letter-spacing: -1px;
+            font-weight: 600;
+        }
+
+        strong {
+            font-size: 1.3em;
+        }
+    }
+
+    .content-8 {
+        padding: 80px 0;
+        background-color: $bg;
+
+        .desc {
+            text-align: left;
+        }
+
+        .bg-wrap {
+            @include bg('sub/atopic_5.png');
+            height: 450px;
+        }
+    }
+
+    .content-9 {
+        margin: 80px 0;
+
+        .qna-wrap {
+            .box {
+                &:last-child {
+                    flex-grow: 0.15;
+                }
+            }
+        }
+    }
+}
+
+
+@include desktop {
+    .content-2.hover {
+        .hover-cont {
+            justify-content: center;
+            text-align: center;
+
+            li {
+                margin-bottom: 3%;
+            }
+        }
+    }
+
+    .rhinitis-page {
+        .content-2 {
+            .hover-cont {
+                li {
+                    flex: 1 1 30%;
+                }
+            }
+        }
+    }
+
+    .asthma-page {
+        .content-4 {
+            .box {
+                flex: 1 1 30%;
+                margin-bottom: 5%;
+
+                &:nth-child(4) {
+                    flex-grow: 0.15;
+                }
+
+                &:last-child {
+                    flex-grow: 0.15;
+                }
+            }
+        }
+
+        .content-5 {
+            .bg-wrap {
+                height: 550px;
+            }
+        }
+    }
+
+    .atopy-page {
+        .content-1 {
+            dd {
+                br {
+                    @include br;
+                }
+            }
+        }
+
+        .content-2 {
+            .hover-cont {
+                li {
+                    flex: 1 1 40%;
+                }
+            }
+        }
+    }
+}
+
+@include tablet-labtop {
+    .rhinitis-page {
+        .content-3 {
+            padding: 20px;
+
+            .box {
+                p {
+                    br {
+                        @include br;
+                    }
+                }
+            }
+        }
+
+        .content-5 {
+            .desc {
+                br {
+                    @include br;
+                }
+            }
+        }
+    }
+    .asthma-page {
+        .content-2 {
+            ol {
+                margin: 8% auto 0;
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+
+            li {
+                flex: 1 1 40%;
+                margin-bottom: 20px;
+
+                p {
+                    margin-bottom: 40px;
+                    font-size: 0.95em;
+                }
+
+                img {
+                    margin-top: 40px;
+                    width: 100px;
+                    height: auto;
+                }
+            }
+        }
+
+        .content-3 {
+            .text-wrap {
+                width: 65%;
+            }
+        }
+
+        .content-5 {
+            .box {
+                margin-bottom: 8%;
+            }
+        }
+
+        .content-6 {
+            br {
+                @include br;
+            }
+        }
+    }
+
+    .atopy-page {
+        .content-5 {
+            br {
+                @include br;
+            }
+
+            ol {
+                max-width: inherit;
+                flex-wrap: wrap;
+            }
+
+            li {
+                flex: 1 1 30%;
+                margin-bottom: 5%;
+
+                p {
+                    line-height: 300px;
+                    padding-top: 25px;
+                }
+
+                span {
+                    bottom: -30px;
+                }
+            }
+        }
+
+        .content-7 {
+            .box {
+                div {
+                    width: 80%;
+                }
+            }
+        
+        }
+    }
+}
+
+@include tablet {
+    .rhinitis-page {
+        .content-2 {
+            .hover-cont {
+                margin-top: 8%;
+            }
+        }
+
+        .content-3 {
+            .box-wrap {
+                margin-top: 8%;
+                gap: 35px;
+            }
+
+            .box {
+                flex: 1 1 40%;
+            }
+        }
+
+        .content-4 {
+            text-align: center;
+
+            .bg-wrap {
+                background-image: none;
+                height: auto;
+            }
+
+            .tit {
+                text-align: center;
+            }
+
+            .desc {
+                text-align: center;
+            }
+        }
+
+        .content-5 {
+            .result {
+                font-size: 1.05em;
+            }
+        }
+
+        .content-6 {
+            .cont-wrap {
+                .box {
+                    &:last-child {
+                        flex-grow: 0.15;
+                    }
+                }
+            }
+        }
+    }
+
+    .asthma-page {
+        .content-1 {
+            .cont-wrap {
+                margin-top: 8%;
+            }
+        }
+        
+        .content-3 {
+            .bg-wrap {
+                overflow: hidden;
+                background-image: inherit;
+                height: auto;
+            }
+
+            .text-wrap {
+                width: auto;
+            }
+        }
+
+        .content-4 {
+            .bg-wrap {
+                background-image: inherit;
+                height: auto;
+            }
+
+            .box-wrap {
+                margin-top: 12%;
+            }
+
+            .text-wrap {
+                float: inherit;
+                width: 100%;
+            }
+
+            .tit {
+                text-align: center;
+            }
+        }
+
+        .content-5 {
+            .bg-wrap {
+                height: auto;
+                background-image: none;
+
+                .text-wrap {
+                    float: inherit;
+                    width: auto;
+                }
+            }
+
+            .box-wrap {
+                margin-top: 8%;
+            }
+        }
+    }
+
+    .atopy-page {
+        .content-1 {
+            .cont-wrap-2 {
+                br {
+                    @include br;
+                }
+            }
+        }
+
+        .content-3 {
+            .box-wrap {
+                margin-top: 8%;
+            }
+
+            .box {
+                span {
+                    width: 100px;
+                    height: 40px;
+                    line-height: 40px;
+                }
+            }
+
+            img {
+                margin-top: 5%;
+            }
+
+            h4 {
+                margin: 3% 0;
+            }
+        }
+
+        .content-5 {
+            li {
+                p {
+                    padding-top: 0;
+                    line-height: 250px;
+                }
+            }
+        }
+
+        .content-8 {
+            .bg-wrap {
+                background-image: inherit;
+                height: auto;
+
+                br {
+                    content: inherit;
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .content-2.hover {
+        .hover-cont {
+            margin-top: 8%;
+        }
+
+        .hover-result {
+            margin-top: 5%;
+        }
+
+        .result {
+            font-size: 1em;
+            text-align: center;
+        }
+    }
+
+    .rhinitis-page {
+        .content-3 {
+            .cont-wrap {
+                margin-top: 8%;
+            }
+
+            h4 {
+                width: 100%;
+                font-size: 1.05em;
+            }
+
+            .box-wrap {
+                display: inherit;
+                margin-top: 12%;
+            }
+
+            .box:not(:last-child) {
+                margin-bottom: 10%;
+            }
+        }
+
+        .content-4 {
+            .result {
+                font-size: 1.05em;
+            }
+        }
+
+        .content-5 {
+            .result {
+                margin-top: 5%;
+            }
+        }
+    }
+
+    .atopy-page {
+        .content-1 {
+            .cont-wrap {
+                margin-top: 8%;
+                display: inherit;
+            }
+
+            dl {
+                margin-bottom: 15px;
+                padding: 15px;
+            }
+        }
+
+        .content-3 {
+            .box-wrap {
+                margin-top: 15%;
+            }
+
+            .box {
+                padding: 20px;
+            }
+        }
+
+        .content-5 {
+            li {
+                margin-bottom: 8%;
+                flex: 1 1 40%;
+
+                span {
+                    bottom: -25px;
+                }
+            }
+
+        }
+
+        .content-7 {
+            ul {
+                margin-top: 5%;
+            }
+
+            li {
+                margin-bottom: 5%;
+            }
+
+            .box {
+                gap: $radius;
+                padding: 20px;
+
+                span {
+                    width: 60px;
+                    padding: 2px 0;
+                }
+
+                p {
+                    display: block;
+                    font-size: 1em;
+                }
+            }
+
+            h4 {
+                font-size: 1.15em;
+            }
+        }
+
+        .content-8 {
+            .bg-wrap {
+                br {
+                    content: '';
+                }
+            }
+        }
+    }
+}

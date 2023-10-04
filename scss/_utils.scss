@@ -1,0 +1,93 @@
+$main: #5adfc4;
+$sub: #19625b;
+$white: #fff;
+$bg: #f7f7f7;
+$br: #e0e0e0;
+$radius: 10px;
+$delay: 0.2s;
+
+/* 반응형 화면 크기 */
+$desktop: 1300px;
+$tablet-labtop: 988px;
+$tablet: 796px;
+$mobile: 600px;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+  
+* {
+    font-family: 'Montserrat', Malgun Gothic, sans-serif;
+    font-size: 100%;
+}
+
+/* 아이폰 사파리에서 화면회전시 폰트 확대방지*/
+* {
+    -webkit-text-size-adjust: none;
+}
+
+/*Reset*/
+html,body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* body {-webkit-overflow-scrolling:touch; overflow:auto;} */
+/* body {overflow:auto; -webkit-overflow-scrolling:touch;} */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, legend {
+    margin : 0;
+    padding : 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size : 100%;
+}
+
+ol, ul, li {
+    list-style : none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #333;
+}
+
+a[href*="tel:"] {
+    color: inherit;
+}
+
+a:focus {
+    outline: none;
+}
+
+fieldset, img, input {
+    border : 0;
+    vertical-align: middle;
+}
+
+address {
+    font-style: normal;
+}
+
+caption {
+    height: 0;
+    width: 0;
+    line-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    position: absolute;
+}
+
+legend {
+    display: none;
+}
+
+body, h1, h2, h3, h4, th, td, input {
+    color: #333;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+}
+
+strong {
+    font-weight: 600;
+}

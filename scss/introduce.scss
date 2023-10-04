@@ -1,0 +1,311 @@
+@import 'sub';
+
+// 배너 이미지
+.column {
+    @include bg('subanner/banner_5.jpg');
+    height: 400px;
+    position: relative;
+}
+
+.intro {
+    @include bg('subanner/introduce_banner.jpg');
+    height: 400px;
+    position: relative;
+}
+
+
+// 한의원 소개
+.intro-page {
+    small {
+        display: block;
+        text-align: center;
+        letter-spacing: 5px;
+        margin-bottom: 5px;
+    }
+
+    img {
+        margin-top: 5%;
+    }
+
+    .content-1 {
+        padding: 80px 0;
+        background-color: #dcf5f1;
+
+        .cont-wrap {
+            text-align: center;
+        }
+    }
+
+    .content-2 {
+        margin: 80px 0;
+        text-align: center;
+    }
+
+    .content-3 {
+        margin: 80px 0;
+    }
+
+    .content-4 {
+        padding: 80px 0;
+        background-color: $bg;
+        
+        img {
+            display: block;
+            margin: 0 auto;
+            padding: 1% 0;
+        }
+    }
+}
+
+// 컬럼
+.column-page {
+    .inner {
+        img {
+            object-fit: cover;
+        }
+    }
+
+    h3 {
+        text-align: left;
+        margin-bottom: 3%;
+    }
+
+    .content-1 {
+        .pick-column {
+            padding: 80px 0;
+            background-color: #f6f6f6;
+        }
+    
+        .pick-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2%;
+        }
+
+        .cell {
+            flex: 1 1 20%;
+            border-radius: $radius;
+            background: $white;
+            margin-bottom: 2%;
+            transition: all $delay ease-in-out;
+
+            &:hover {
+                box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+                transition: all $delay ease-in-out;
+
+                .title {
+                    text-decoration: underline;
+                }
+            }
+
+            div {
+                padding: 5%;
+            }
+
+            .title {
+                word-break: keep-all;
+                min-height: 48px;
+            }
+
+            .writer {
+                font-size: 0.85em;
+                margin-top: 3%;
+                color: #BBB;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 200px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    }
+
+    .content-2 {
+        .recent-list {
+            margin: 80px 0;
+        }
+
+        .recent-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 3%;
+        }
+
+        .cell {
+            flex: 1 1 40%;
+            border-bottom: 1px solid #eee;
+            padding: 2% 0;
+    
+            &:first-child {
+                border-top: 1px solid #eee;
+            }
+    
+            &:nth-child(2) {
+                border-top: 1px solid #eee;
+            }
+
+            &:hover {
+                .title {
+                    text-decoration: underline;
+                }
+            }
+    
+            a {
+                display: flex;
+                justify-content: space-between;
+                gap: 15px;
+    
+                div {
+                    width: 70%;
+                }
+            }
+    
+            .tag {
+                color: $main;
+                font-size: 0.85em;
+            }
+    
+            .title {
+                margin: 2.5% 0 4%;
+                line-height: 23px;
+                color: #000;
+            }
+    
+            .content {
+                font-size: 0.9em;
+                margin-bottom: 3%;
+                @include ellipsis($lines: 3);
+            }
+    
+            .date {
+                font-size: 0.85em;
+            }
+
+            .writer {
+                font-size: 0.85em;
+            }
+
+            img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+}
+
+
+// 미디어쿼리
+
+@include tablet-labtop {
+    .intro-page {
+        .content-1 {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .content-2 {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .content-3 {
+            br {
+                @include br;
+            }
+        }
+    }
+
+    .column-page {
+        .pick-wrap {
+            gap: 3%;
+
+            .cell {
+                flex: 1 1 30%;
+                margin-bottom: 3%;
+                box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+
+                &:nth-child(7) {
+                    flex-grow: 0.15;
+                }
+
+                &:last-child {
+                    flex-grow: 0.15;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .intro-page {
+        br {
+            @include br;
+        }
+    }
+    
+    .column-page {
+        .content-1 {
+            .pick-wrap {
+                .cell {
+                    flex: 1 1 40%;
+                }
+    
+                img {
+                    height: 170px;
+                }
+            }
+        }
+
+        .content-2 {
+            .cell {
+                a {
+                    div {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .column-page {
+        .content-1 {
+            .pick-wrap {
+                display: inherit;
+                
+                .cell {
+                    .title {
+                        @include ellipsis($lines: 2);
+                        font-size: 0.95em;
+                    }
+                }
+            }
+        }
+
+        .content-2 {
+            .recent-wrap {
+                .cell {
+                    flex: 1 1 50%;
+    
+                    &:first-child {
+                        border-bottom: 0;
+                    }
+    
+                    a {
+                        div {
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
