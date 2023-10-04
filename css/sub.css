@@ -2,7 +2,7 @@
 /* 반응형 화면 크기 */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 * {
-  font-family: "Montserrat", "Noto Sans KR", Malgun Gothic, sans-serif !important;
+  font-family: "Montserrat", "Noto Sans KR", Malgun Gothic, sans-serif;
   font-size: 100%;
 }
 
