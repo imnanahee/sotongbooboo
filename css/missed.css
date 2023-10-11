@@ -817,7 +817,7 @@ strong {
   margin: 3% 0;
   border: 1px solid #5adfc4;
   border-radius: 10px;
-  padding: 0 30px 30px;
+  padding: 0 30px 20px;
   box-sizing: border-box;
 }
 .infertility-page .content-2 ul {
@@ -826,7 +826,7 @@ strong {
   gap: 30px;
 }
 .infertility-page .content-2 li {
-  width: 18%;
+  width: 20%;
 }
 .infertility-page .content-2 li i {
   color: #5adfc4;
@@ -1221,6 +1221,18 @@ strong {
   }
 }
 @media (max-width: 600px) {
+  .infertility-page .content-1 .bg-wrap br {
+    content: "";
+  }
+  .infertility-page .content-2 li p {
+    font-size: 0.9em;
+  }
+  .infertility-page .content-4 .box-wrap {
+    display: inherit;
+  }
+  .infertility-page .content-4 .box-wrap .box {
+    margin-bottom: 5%;
+  }
   .missed-page .content-2 dl {
     padding: 30px 0;
   }

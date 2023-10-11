@@ -49,7 +49,7 @@
             margin: 3% 0;
             border: 1px solid $main;
             border-radius: $radius;
-            padding: 0 30px 30px;
+            padding: 0 30px 20px;
             box-sizing: border-box;
         }
 
@@ -60,7 +60,7 @@
         }
 
         li {
-            width: 18%;
+            width: 20%;
 
             i {
                 color: $main;
@@ -574,6 +574,34 @@
 }
 
 @include mobile {
+    .infertility-page {
+        .content-1 {
+            .bg-wrap {
+                br {
+                    content: '';
+                }
+            }
+        }
+
+        .content-2 {
+            li {
+                p {
+                    font-size: 0.9em;
+                }
+            }
+        }
+
+        .content-4 {
+            .box-wrap {
+                display: inherit;
+
+                .box {
+                    margin-bottom: 5%;
+                }
+            }
+        }
+    }
+
     .missed-page {
         .content-2 {
             dl {
