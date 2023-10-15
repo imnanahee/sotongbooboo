@@ -215,6 +215,10 @@ strong {
 #aside li a {
   display: block;
 }
+#aside li span {
+  display: block;
+  cursor: pointer;
+}
 #aside .scroll-top {
   display: block;
   padding: 30px 0;

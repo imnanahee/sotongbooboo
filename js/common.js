@@ -53,81 +53,12 @@ const headerTemplate = `
 `;
 
 const asideTemplate = `
-    <aside id="quick">
-        <div class="lnb_btn">
-            <div class="menu">
-                <a href="javascript:void" class="kakao"><span>카톡상담</span></a>
-                <ul class="brunch_btn kakao">
-                    <li><a href="javascript:void(0)">청라점</a></li>
-                    <li><a href="javascript:void(0)">성동점</a></li>
-                    <li><a href="javascript:void(0)">경기<br>광주점</a></li>
-                </ul>
-            </div>
-            <div class="menu">
-                <a href="javascript:void" class="naver"><span>네이버상담</span></a>
-                <ul class="brunch_btn naver">
-                    <li><a href="javascript:void(0)">청라점</a></li>
-                    <li><a href="javascript:void(0)">성동점</a></li>
-                    <li><a href="javascript:void(0)">경기<br>광주점</a></li>
-                </ul>
-            </div>
-            <div class="menu">
-                <a href="javascript:void" class="directions"><span>오시는 길</span></a>
-            </div>
-            <div class="menu">
-                <a href="javascript:void" class="number"><span>전화상담</span></a>
-                <ul class="brunch_btn call">
-                    <li><a href="javascript:void(0)">청라점</a></li>
-                    <li><a href="javascript:void(0)">성동점</a></li>
-                    <li><a href="javascript:void(0)">경기<br>광주점</a></li>
-                </ul>
-            </div>
-            <div class="menu">
-                <a href="javascript:void" class="room"><span>입원실안내</span></a>
-            </div>
-        </div>
-        <div class="clinic_hours">
-            <div class="swiper_bullet"></div>
-            <div class="swiper-wrapper">
-                <div class="branch swiper-slide">
-                    <h3 class="area">청라점</h3>
-                    <ul>
-                        <li><p>월-금</p>09:30 ~ 21:00</li>
-                        <li><p>토,일,공휴일</p>09:30 ~ 14:00</li>
-                        <li><p>점심시간</p>13:00 ~ 14:00</li>
-                        <li><p>토,일,공휴일</p>점심시간 없음</li>
-                    </ul>
-                </div>
-                <div class="branch swiper-slide">
-                    <h3 class="area">성동점</h3>
-                    <ul>
-                        <li><p>월-토, 공휴일</p>09:00 ~ 19:00</li>
-                        <li><p>월-토, 공휴일</p>09:30 ~ 15:00</li>
-                        <li><p>점심시간</p>13:00 ~ 14:00</li>
-                        <li><p>일요일</p>점심시간 없음</li>
-                    </ul>
-                </div>
-                <div class="branch swiper-slide">
-                    <h3 class="area">경기광주점</h3>
-                    <ul>
-                        <li><p>월-금</p>09:00 ~ 20:00</li>
-                        <li><p>토,일,공휴일</p>09:30 ~ 14:00</li>
-                        <li><p>점심시간</p>13:00 ~ 14:00</li>
-                        <li><p>토,일,공휴일</p>점심시간 없음</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </aside>
-`;
-
-const rightMenuTemplate = `
     <div class="aside-menu">
         <ul>
             <li>
-                <a href="javascript:void(0)" class="btn">
+                <span class="btn">
                     <img src="images/quick_01_off.jpg" alt="카톡상담">
-                </a>
+                </span>
                 <div class="brunch-btn">
                     <a href="javascript:void(0)">청라점</a>
                     <a href="javascript:void(0)">성동점</a>
@@ -135,9 +66,9 @@ const rightMenuTemplate = `
                 </div>
             </li>
             <li>
-                <a href="javascript:void(0)" class="btn">
+                <span class="btn">
                     <img src="images/quick_02_off.jpg" alt="네이버상담">
-                </a>
+                </span>
                 <div class="brunch-btn">
                     <a href="javascript:void(0)">청라점</a>
                     <a href="javascript:void(0)">성동점</a>
@@ -145,9 +76,9 @@ const rightMenuTemplate = `
                 </div>
             </li>
             <li>
-                <a href="javascript:void(0)" class="btn">
+                <span class="btn">
                     <img src="images/quick_03_off.jpg" alt="전화상담">
-                </a>
+                </span>
                 <div class="brunch-btn">
                     <a href="javascript:void(0)">청라점</a>
                     <a href="javascript:void(0)">성동점</a>
@@ -243,7 +174,7 @@ const windowGnbAddEvent = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#header').innerHTML = headerTemplate;
-    document.querySelector('#aside').innerHTML = rightMenuTemplate;
+    document.querySelector('#aside').innerHTML = asideTemplate;
     document.querySelector('#footer').innerHTML = footerTemplate;
 
     const asideMenuBtn = document.querySelectorAll('.aside-menu .btn');
@@ -274,9 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // aside 메뉴 클릭 시 내용 토글
     asideMenuBtn.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-
+        btn.addEventListener('click', () => {
             asideMenuBtn.forEach(otherBtn => {
                 if (otherBtn !== btn) {
                     const siblingDiv = otherBtn.nextElementSibling
@@ -286,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             btn.nextElementSibling.classList.toggle('on');
         })
-    })
+    });
 
     // 상단으로 스크롤 이동
     document.querySelector('.scroll-top').addEventListener('click', (e) => {
