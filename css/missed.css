@@ -974,7 +974,7 @@ strong {
   width: 170px;
   height: 170px;
 }
-.missed-page .content-2 dl:first-child dt {
+.missed-page .content-2 dl:first-child dd {
   color: #d94a4a;
 }
 .missed-page .content-2 dl:last-child {
@@ -985,10 +985,10 @@ strong {
   width: 170px;
   height: 170px;
 }
-.missed-page .content-2 dl:last-child dt {
+.missed-page .content-2 dl:last-child dd {
   color: #475783;
 }
-.missed-page .content-2 dl dt {
+.missed-page .content-2 dl dd {
   font-size: 2em;
   font-weight: bold;
   margin-top: 5px;

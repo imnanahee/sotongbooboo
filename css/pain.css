@@ -947,15 +947,15 @@ strong {
   border-radius: 50px;
   font-weight: 500;
 }
-.chin-page .content-2 ul {
+.chin-page .content-2 .box-wrap {
   width: 100%;
 }
-.chin-page .content-2 ul li {
+.chin-page .content-2 .box-wrap li {
   font-weight: 500;
   font-size: 1.05em;
   line-height: 30px;
 }
-.chin-page .content-2 ul li.circle li::before {
+.chin-page .content-2 .box-wrap li.circle li::before {
   content: "";
   width: 3px;
   height: 3px;
@@ -966,7 +966,7 @@ strong {
   vertical-align: middle;
   margin-right: 5px;
 }
-.chin-page .content-2 ul li .word {
+.chin-page .content-2 .box-wrap li .word {
   background: #efefef;
   margin: 1.5% 0;
   font-weight: normal;
@@ -976,10 +976,13 @@ strong {
   word-break: keep-all;
   box-sizing: border-box;
 }
-.chin-page .content-2 ul li .word li {
+.chin-page .content-2 .box-wrap li .word li {
   font-weight: normal;
 }
 .chin-page .content-2 .middle {
+  text-align: center;
+}
+.chin-page .content-2 .middle ul {
   position: absolute;
   width: 100%;
   display: flex;
@@ -992,10 +995,7 @@ strong {
   min-height: 44px;
   word-break: keep-all;
 }
-.chin-page .content-2 .middle dl {
-  text-align: center;
-}
-.chin-page .content-2 .middle dt {
+.chin-page .content-2 .middle p {
   font-weight: bold;
   font-size: 1.15em;
   margin-top: 3%;
@@ -1248,14 +1248,14 @@ strong {
     content: " ";
     padding: 0 2px;
   }
-  .chin-page .content-2 .middle {
+  .chin-page .content-2 .middle ul {
     position: inherit;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: inherit;
     margin-top: 8%;
   }
-  .chin-page .content-2 .middle dl {
+  .chin-page .content-2 .middle li {
     flex: 1 1 30%;
   }
   .chin-page .content-3 {
